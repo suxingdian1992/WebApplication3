@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>Hello from our View Template!</p>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="~/Scripts/echarts.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 100%;height:600px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        var data = [];
+
+        for (var i = 0; i <= 360; i++) {
+            var t = i / 180 * Math.PI;
+            var r = Math.sin(2 * t) * Math.cos(2 * t);
+            data.push([r, i]);
+        }
+
+        var option = {
+            title: {
+                text: '极坐标双数值轴'
+            },
+            legend: {
+                data: ['line']
+            },
+            polar: {
+                center: ['50%', '54%']
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross'
+                }
+            },
+            angleAxis: {
+                type: 'value',
+                startAngle: 0
+            },
+            radiusAxis: {
+                min: 0
+            },
+            series: [{
+                coordinateSystem: 'polar',
+                name: 'line',
+                type: 'line',
+                showSymbol: false,
+                data: data
+            }],
+            animationDuration: 2000
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

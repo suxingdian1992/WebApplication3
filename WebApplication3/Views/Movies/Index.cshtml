@@ -1,0 +1,73 @@
+﻿@model IEnumerable<WebApplication3.Models.Movie>
+    @*此处引用后台模型类*@
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+    @*此处为默认调用index方法的书写形式*@
+    @*@using (Html.BeginForm())//此处在创建按钮控制器后加入默认表单助手，则点击提交将会默认调取后台控制器默认index方法重新加载页面并通过参数过滤
+    {
+    <p>
+        Title: @Html.TextBox("id")
+        <input type="submit" value="搜索" />
+    </p>
+    }*@
+
+    @*此处的FormMethod.Get将提交的表单数据通过POST请求将搜索信息添加到URL中，以免数据只存留在表单域中而无法通过URL获取*@
+    @using (Html.BeginForm("Index","Movies",FormMethod.Get))//此处在创建按钮控制器后加入默认表单助手，则点击提交将会默认调取后台控制器默认index方法重新加载页面并通过参数过滤
+    {
+        <p>
+            @*从后端返回的viewbag中取得电影类型的list然后加载到下来框中*@
+            Genre: @Html.DropDownList("movieGenre", "All")
+            Title: @Html.TextBox("searchString")
+            <input type="submit" value="搜索" />
+        </p>
+    }
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
