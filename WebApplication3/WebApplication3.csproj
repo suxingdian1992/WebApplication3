@@ -158,6 +158,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707091249585_Initial.cs" />
+    <Compile Include="Migrations\201707091249585_Initial.Designer.cs">
+      <DependentUpon>201707091249585_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707091318108_Rating.cs" />
+    <Compile Include="Migrations\201707091318108_Rating.Designer.cs">
+      <DependentUpon>201707091318108_Rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Movies.cs">
       <DependentUpon>sxdTest.tt</DependentUpon>
@@ -177,6 +186,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sxdTest.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>sxdTest.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -265,6 +277,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707091249585_Initial.resx">
+      <DependentUpon>201707091249585_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707091318108_Rating.resx">
+      <DependentUpon>201707091318108_Rating.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

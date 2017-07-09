@@ -7,6 +7,7 @@
       <Diagram DiagramId="a5260be6231d422ea00b58dedf2881cf" Name="Diagram1">
         <EntityTypeShape EntityType="sxdTestModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="sxdTestModel.Movies" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sxdTestModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
