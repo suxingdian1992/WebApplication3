@@ -20,11 +20,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Title" Type="nvarchar" MaxLength="60" />
           <Property Name="ReleaseDate" Type="datetime" Nullable="false" />
-          <Property Name="Genre" Type="nvarchar(max)" />
+          <Property Name="Genre" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="Rating" Type="nvarchar(max)" />
+          <Property Name="Rating" Type="nvarchar" MaxLength="5" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -60,11 +60,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Genre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Genre" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="Rating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rating" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="sxdTestEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />

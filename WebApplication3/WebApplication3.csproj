@@ -166,6 +166,10 @@
     <Compile Include="Migrations\201707091318108_Rating.Designer.cs">
       <DependentUpon>201707091318108_Rating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707101345193_DataAnnotations.cs" />
+    <Compile Include="Migrations\201707101345193_DataAnnotations.Designer.cs">
+      <DependentUpon>201707101345193_DataAnnotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Movies.cs">
@@ -284,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707091318108_Rating.resx">
       <DependentUpon>201707091318108_Rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707101345193_DataAnnotations.resx">
+      <DependentUpon>201707101345193_DataAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
