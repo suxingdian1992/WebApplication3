@@ -70,7 +70,7 @@ namespace WebApplication3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid)//此处为前台接收到的模型的状态，如果通过则保存，否则启动验证不通过机制
             {
                 db.Movies.Add(movie);
                 db.SaveChanges();
